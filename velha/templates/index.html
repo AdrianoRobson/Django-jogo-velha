@@ -1,0 +1,28 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    {% bootstrap_css %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <form method="post" action="{% url 'index' %}" class="form">
+  {% csrf_token %}
+
+  {% bootstrap_form form %}
+
+  {% buttons %}
+  <button type="submit" class="btn btn-primary" >Jogar</button>
+  {% endbuttons %}
+  </form>
+</div>
+
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
